@@ -15,4 +15,12 @@ class Customer extends Model
     {
         return $this->hasOne(Reservation::class);
     }
+
+    protected $fillable = [
+        'user_id',
+        'name',
+        'phone',
+        'idcard',
+    ];
+
 }
