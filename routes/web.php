@@ -19,6 +19,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//前台
+Route::get('posts', ['as' => 'posts.index', 'uses' =>
+    'PostsController@index']);
+Route::get('post', ['as' => 'posts.show', 'uses' => 'PostsController@show']);
+Route::get('about', ['as' => 'posts.about', 'uses' =>
+    'PostsController@about']);
+Route::get('contact', ['as' => 'posts.contact', 'uses' =>
+    'PostsController@contact']);
+
 // 後台
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/', ['as' => 'admin.dashboard.index', 'uses' => 'AdminDashboardController@index']);
