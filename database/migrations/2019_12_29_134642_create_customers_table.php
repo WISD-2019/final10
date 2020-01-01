@@ -17,7 +17,7 @@ class CreateCustomersTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->text('name');
-            $table->integer('phone');
+            $table->text('phone');
             $table->text('idcard');
             $table->timestamps();
         });
