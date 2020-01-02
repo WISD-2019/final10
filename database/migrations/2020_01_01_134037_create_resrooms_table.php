@@ -17,6 +17,8 @@ class CreateResroomsTable extends Migration
             $table->bigIncrements('id');
             $table->dateTime('in_room');
             $table->dateTime('out_room');
+            $table->integer('room_id');
+            $table->integer('reservation_id');
             $table->timestamps();
         });
     }
