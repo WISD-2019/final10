@@ -38,7 +38,16 @@
                 <a href="{{ route('admin.dashboard.index') }}"><i class="fa fa-fw fa-dashboard"></i> 主控台</a>
             </li>
             <li>
-                <a href="{{ route('admin.posts.index') }}"><i class="fa fa-fw fa-edit"></i> 文章管理</a>
+                <a href="{{ route('admin.posts.account') }}"><i class="fa fa-fw fa-edit"></i> 帳號管理</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.posts.index') }}"><i class="fa fa-fw fa-edit"></i> 客戶管理</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.posts.index') }}"><i class="fa fa-fw fa-edit"></i> 訂單管理</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.posts.index') }}"><i class="fa fa-fw fa-edit"></i> 房間管理</a>
             </li>
         </ul>
     </div>
