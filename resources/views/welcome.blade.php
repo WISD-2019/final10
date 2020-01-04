@@ -12,7 +12,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: #f9d6d5;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -81,17 +81,74 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    線上預約訂房
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                                <div class="post-preview">
+
+                                    <h2 class="post-title">
+                                        房間1
+                                    </h2>
+                                    <h3 class="post-subtitle">
+                                        2人房
+                                        <br><br>
+                                        可預約時間:<?php echo $testa; ?>
+                                    </h3>
+
+                                </div>
+
+                                <hr>
+
+                                <div class="post-preview">
+                                    <h2 class="post-title">
+                                        房間2
+
+                                    </h2>
+                                    <h3 class="post-subtitle">
+                                        4人房
+                                        <br><br>
+                                        可預約時間:<?php echo $testb; ?>
+                                    </h3>
+                                </div>
+
+                                <hr>
+
+                                <div class="post-preview">
+                                    <h2 class="post-title">
+                                        房間3
+
+                                    </h2>
+                                    <h3 class="post-subtitle">
+                                        6人房
+                                        <br><br>
+                                        可預約時間:<?php echo $testc; ?>
+                                    </h3>
+                                </div>
+
+                                <hr>
+
+                                <div class="post-preview">
+                                    <h2 class="post-title">
+                                        房間4
+
+
+                                    </h2>
+                                    <h3 class="post-subtitle">
+                                        8人房
+                                        <br><br>
+                                        可預約時間:<?php echo $testd; ?>
+                                    </h3>
+
+                                </div>
+                                <hr>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

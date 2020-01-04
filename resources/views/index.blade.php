@@ -13,72 +13,59 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>Clean Blog</h1>
+                    <h1>線上訂房</h1>
                     <hr class="small">
-                    <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                    <span class="subheading">XXX民宿</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-
-
     <!-- Main Content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-preview">
-                    <a href="{{route('posts.show')}}">
+
                         <h2 class="post-title">
-                            Man must explore, and this is exploration at its greatest
+                            房間1
                         </h2>
                         <h3 class="post-subtitle">
-                            Problems look mighty small from 150 miles up
+                            雙人房
                         </h3>
                     </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
                 </div>
                 <hr>
                 <div class="post-preview">
-                    <a href="{{route('posts.show')}}">
                         <h2 class="post-title">
-                            I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
+                            房間2
                         </h2>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
+                        <h3 class="post-subtitle">
+                            4人房
+                        </h3>
                 </div>
                 <hr>
                 <div class="post-preview">
-                    <a href="{{route('posts.show')}}">
                         <h2 class="post-title">
-                            Science has not yet mastered prophecy
+                            房間3
                         </h2>
                         <h3 class="post-subtitle">
-                            We predict too much for the next year and yet far too little for the next ten.
+                            6人房
                         </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
                 </div>
                 <hr>
                 <div class="post-preview">
-                    <a href="{{route('posts.show')}}">
                         <h2 class="post-title">
-                            Failure is not an option
+                            房間4
                         </h2>
                         <h3 class="post-subtitle">
-                            Many say exploration is part of our destiny, but it’s actually our duty to future generations.
+                            8人房
                         </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
+
                 </div>
                 <hr>
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>
+
             </div>
         </div>
     </div>
