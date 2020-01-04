@@ -14,7 +14,6 @@ class HomePageController extends Controller
      */
     public function index()
     {
-        //
         $outtime=Room::find(1);
         $get_date1='123';
         foreach($outtime-> resrooms as $resrooms) {
