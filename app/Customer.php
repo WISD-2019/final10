@@ -3,6 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
+use App\Reservation;
+use App\Resroom;
+use App\Room;
 
 class Customer extends Model
 {
