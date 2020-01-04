@@ -11,8 +11,8 @@ use App\Reservation;
 class Room extends Model
 {
     //
-    public function customer()
+    public function resroom()
     {
-        return $this->hasMany(Customer::class);
+        return $this->hasMany(Resroom::class);
     }
 }
