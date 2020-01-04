@@ -41,4 +41,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('/posts',['as'=>'admin.posts.store','uses'=> 'AdminPostsController@store']);
     Route::patch('/posts/{id}',['as'=>'admin.posts.update','uses'=>'AdminPostsController@update']);
     Route::delete('/posts/{id}',['as'=>'admin.posts.destroy','uses'=>'AdminPostsController@destroy']);
+    
+    Route::get('/account'          , ['as' => 'admin.posts.account' , 'uses' => 'AccountController@index']);
+    Route::post('/account/create'  , ['as' => 'admin.posts.create' , 'uses' => 'AccountController@create']);
 });
