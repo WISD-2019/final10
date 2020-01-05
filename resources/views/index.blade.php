@@ -30,6 +30,7 @@
                 </h2>
                 <form action="/about" method="Post">
                     {{ csrf_field() }}
+                    <input type = "hidden" id = "delete_id" name = "delete_id" value = "{{$a}}">
                     入住時間：  <input type="datetime-local" name="bdaytime">
                 <p>
 

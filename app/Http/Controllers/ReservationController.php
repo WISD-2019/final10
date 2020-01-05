@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use App\Resroom;
+use App\Room;
 use App\Reservation;
+use Auth;
+use App\User;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
@@ -17,11 +20,42 @@ class ReservationController extends Controller
     public function index(Request $request)
     {
         //
-        $a=$request->input("name");
-        $b=$request->input("bdaytime");
-        $c=$request->input("bdaytime1");
+        $a=$request->input("bdaytime");
+        $b=$request->input("bdaytime1");
 
-        return view('about',['a'=>$a,'b'=>$b,'c'=>$c]);
+        $c=$request->input("delete_id");
+
+        $room = Room::where('id', $request->input("delete_id"))->first();
+        $much=$room->price;
+
+        $reservation= new Reservation;
+        $reservation->pay='n';
+        $reservation->cost=$much;
+        $reservation->money=$much*0.4;
+        $reservation->customer_id=Auth::user()->id;
+        $reservation->save();
+
+        $reseroom= new Resroom;
+        $reseroom->in_room = $request->input("bdaytime");
+        $reseroom->out_room =$request->input("bdaytime1");
+        $reseroom->room_id=$request->input("delete_id");
+        $last = Reservation::SELECT('id')->orderBy('id', 'desc')->first();
+        $reseroom->reservation_id=$last->id;
+        $reseroom->save();
+
+        $lasttime = Resroom::orderBy('id', 'desc')->first();
+        $total=$much* ceil((strtotime($lasttime->out_room) - strtotime($lasttime->in_room))/86400);
+        $inputmuch = Reservation::Select('id','cost')->orderBy('id', 'desc')->first();
+
+        $inputmuch->cost=$total;
+        $inputmuch->save();
+
+        $inputmoney = Reservation::Select('id','money')->orderBy('id', 'desc')->first();
+        $inputmoney->money=$total*0.4;
+        $inputmoney->save();
+
+
+        return view('about',['a'=>$a,'b'=>$b,'c'=>$c,'total'=>$total,'room'=>$room]);
     }
 
     /**
@@ -32,14 +66,6 @@ class ReservationController extends Controller
     public function create(Request $request)
     {
         //
-        $reservation= new Resroom;
-        $reservation->in_room = $request->input("bdaytime");
-        $reservation->out_room =$request->input("bdaytime1");
-        $reservation->room_id=1;
-        $reservation->reservation_id=1;
-        $reservation->save();
-
-        return view('about');
     }
 
     /**
