@@ -23,10 +23,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/posts', 'PostsController@index');
 Route::post('/about', 'ReservationController@index');
+Route::post('/post','ResroomController@index');
+
 //前台
 Route::get('posts', ['as' => 'posts.index', 'uses' =>
     'PostsController@index']);
-Route::get('post', ['as' => 'posts.show', 'uses' => 'PostsController@show']);
+Route::get('post', ['as' => 'posts.show', 'uses' => 'ResroomController@index']);
 Route::get('about', ['as' => 'posts.about', 'uses' =>
     'PostsController@about']);
 Route::get('contact', ['as' => 'posts.contact', 'uses' =>

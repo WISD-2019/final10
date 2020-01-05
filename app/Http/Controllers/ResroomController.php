@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use App\Resroom;
+use App\Room;
+use App\Reservation;
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
+use Auth;
 
 class ResroomController extends Controller
 {
@@ -12,9 +17,13 @@ class ResroomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        $name=Auth::User()->Customer->name;
+//        dd($name);
+        $a=['a'=>$name];
+        return  view('post',$a);
     }
 
     /**
