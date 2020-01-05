@@ -41,8 +41,10 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/posts/{id}/edit', ['as' => 'admin.posts.edit'  , 'uses' => 'AdminPostsController@edit']);
     Route::post('/posts',['as'=>'admin.posts.store','uses'=> 'AdminPostsController@store']);
     Route::patch('/posts/{id}',['as'=>'admin.posts.update','uses'=>'AdminPostsController@update']);
-    Route::delete('/posts/{id}',['as'=>'admin.posts.destroy','uses'=>'AdminPostsController@destroy']);
+    Route::delete('/posts/{id}',['as'=>'admin.posts.destroy','uses'=>'AdminPostsController@destroy']);    
 
     Route::get('/account'          , ['as' => 'admin.posts.account' , 'uses' => 'AccountController@index']);
-    Route::post('/account/create'  , ['as' => 'admin.posts.create' , 'uses' => 'AccountController@create']);
+    Route::post('/account/create'  , ['as' => 'admin.account.create' , 'uses' => 'AccountController@create']);
+    Route::post('/account/update'  , ['as' => 'admin.account.update' , 'uses' => 'AccountController@update']);
+    Route::post('/account/destroy'  , ['as' => 'admin.account.destroy' , 'uses' => 'AccountController@destroy']);
 });
