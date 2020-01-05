@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Room;
+use App\User;
+use App\Customer;
+use auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,6 +27,18 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $checkuser = Customer::SELECT('user_id')->where('user_id', Auth::user()->id)->first();
+        // dd($checkuser);
+        if($checkuser==""){
+        $customer= new Customer;
+        $customer->user_id=Auth::user()->id;
+        $customer->name=Auth::user()->name;
+        $customer->phone=Auth::user()->phone;
+        $customer->idcard=Auth::user()->idcard;
+        $customer->save();
+        }
+        
+
         $outtime=Room::find(1);
         $get_date1='123';
         foreach($outtime-> resrooms as $resrooms) {
