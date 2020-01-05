@@ -45,8 +45,19 @@ class AccountController extends Controller
         $user->name = $request->input("name");
         $user->email = $request->input("email");
         $user->password = Hash::make($request->input("password"));
-        $user->status = $request->input("status");
+        $user->type = $request->input("status");
+        $user->phone = $request->input("phone");
+        $user->idcard = $request->input("idcard");
         $user->save();
+
+
+        $cus = new Customer;
+        $cus->user_id = $request->input("id");
+        $cus->name = $request->input("name");
+        $cus->phone = $request->input("phone");
+        $cus->idcard = $request->input("idcard");
+        $cus->save();
+
         return redirect('/admin/account');
     }
 
@@ -98,8 +109,13 @@ class AccountController extends Controller
         $user->name = $request->input("update_name");
         $user->email = $request->input("update_email");
         $user->password = Hash::make($request->input("update_password"));
-        $user->status = $request->input("update_status");
+        $user->type = $request->input("update_status");
         $user->save();
+
+        $cus = Customer::where('user_id', $request->input("update_id"))->first();
+        $cus->name = $request->input("update_name");
+        $cus->save();
+
         return redirect('/admin/account');
     }
 
@@ -113,6 +129,7 @@ class AccountController extends Controller
     {
         //
         $deleteRow = User::where('id', $request->input("delete_id"))->delete();
+        $deleteCus = Customer::where('user_id', $request->input("delete_id"))->delete();
         return redirect('/admin/account');
     }
 }

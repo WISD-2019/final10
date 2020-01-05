@@ -43,10 +43,14 @@
       <input type="text" class="form-control" name="id" id="id" value=<?php echo $lastid+1 ;?> readonly="readonly" >
       <label >姓名</label>
       <input type="text" class="form-control" name="name" id="name" placeholder="一二三">
+      <label >電話</label>
+      <input type="text" class="form-control" name="phone" id="phone" placeholder="0912345678">
       <label >電子信箱</label>
-      <input type="text" class="form-control" name="email" id="email" placeholder="123456@gmail.com">      
+      <input type="text" class="form-control" name="email" id="email" placeholder="123456@gmail.com"> 
+      <label >身分證</label>
+      <input type="text" class="form-control" name="idcard" id="idcard" placeholder="P123456789">     
       <label >密碼</label>
-      <input type="text" class="form-control" name="password" id="password" placeholder="00000000">
+      <input type="text" class="form-control" name="password" id="password" placeholder="00000000" pattern="[a-zA-Z0-9]{8,}" title="請輸入英文或數字共8個字以上" required>
       <label >身分別</label>
       <input type="text" class="form-control" name="status" id="status" placeholder="1">
       <div class="modal-footer">
@@ -78,7 +82,7 @@
                 <thead>
                     <tr>
                         <th width="30" style="text-align: center">id</th>
-                        <th width="50" style="text-align: center">姓名</th>
+                        <th width="80" style="text-align: center">姓名</th>
                         <th width="200" style="text-align: center">電子信箱</th>
                         <th width="100" style="text-align: center">密碼</th>
                         <th width="100" style="text-align: center">身分別</th>
@@ -92,7 +96,7 @@
                         <td>{{$user->name}}</td>
                         <td>{{($user->email)}}</td>
                         <td>{{($user->password)}}</td>
-                        <td>{{($user->status)}}</td>
+                        <td>{{($user->type)}}</td>
                         <td>
                           <button type="button" class="btnSelect btn btn-primary" data-toggle="modal" data-target="#exampleModal2" >
                             修改
