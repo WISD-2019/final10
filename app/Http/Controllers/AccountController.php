@@ -26,8 +26,8 @@ class AccountController extends Controller
         }else{
             $lastid=$lastuser->id;
         }
-
-        $data=['user'=>$user , 'lastid'=>$lastid ];
+        $a =1; $b=2;$c=3;$d=4;
+        $data=['user'=>$user , 'lastid'=>$lastid ,'a'=>$a,'b'=>$b,'c'=>$c,'d'=>$d,];
         return view('admin.posts.account',$data);
     }
 
@@ -93,6 +93,14 @@ class AccountController extends Controller
     public function update(Request $request)
     {
         //
+        $user = User::where('id', $request->input("update_id"))->first();
+        
+        $user->name = $request->input("update_name");
+        $user->email = $request->input("update_email");
+        $user->password = Hash::make($request->input("update_password"));
+        $user->status = $request->input("update_status");
+        $user->save();
+        return redirect('/admin/account');
     }
 
     /**
@@ -104,5 +112,7 @@ class AccountController extends Controller
     public function destroy(Request $request)
     {
         //
+        $deleteRow = User::where('id', $request->input("delete_id"))->delete();
+        return redirect('/admin/account');
     }
 }
