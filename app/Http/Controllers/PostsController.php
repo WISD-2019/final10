@@ -7,22 +7,24 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
         //
-        return view('index');
+        $a=$request->input("id");
+
+        return view('index',['a'=>$a]);
     }
-    public function show()
+    public function show(Request $request)
     {
         //
         return view('post');
     }
-    public function about()
+    public function about(Request $request)
     {
         //
         return view('about');
     }
-    public function contact()
+    public function contact(Request $request)
     {
         //
         return view('contact');

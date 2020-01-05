@@ -26,7 +26,12 @@
                                     價錢:{{$a->price}}
                                     <br><br>
                                         可預約時間:<?php echo $testa; ?>
-                                        <a href="posts"><font face="Arial" color="#cc33ff" size="7">預約~</font></a>
+                                        <form action="/posts" method="POST">
+                                            {{ csrf_field() }}
+                                            <input type = "hidden" id = "delete_id" name = "id" value = "{{$a->id}}">
+
+                                                <button type="submit" class="btn btn-danger">預約</button>
+                                        </form>
                                 </td>
                                 <td><div class="post-preview">
                                         <h2 class="post-title">
@@ -41,7 +46,12 @@
                                             價錢:{{$b->price}}
                                             <br><br>
                                             可預約時間:<?php echo $testb; ?>
-                                            <a href="posts"><font face="Arial" color="#cc33ff" size="7">預約~</font></a>
+                                            <form action="/posts" method="POST">
+                                                {{ csrf_field() }}
+                                                <input type = "hidden" id = "delete_id" name = "id" value = "{{$b->id}}">
+
+                                                    <button type="submit" class="btn btn-danger">預約</button>
+                                            </form>
                                         </h3>
                                     </div></td>
                             </tr>
@@ -59,7 +69,12 @@
                                         價錢:{{$c->price}}
                                         <br><br>
                                         可預約時間:<?php echo $testc; ?>
-                                        <a href="posts"><font face="Arial" color="#cc33ff" size="7">預約~</font></a>
+                                        <form action="/posts" method="POST">
+                                            {{ csrf_field() }}
+                                            <input type = "hidden" id = "delete_id" name = "id" value = "{{$c->id}}">
+
+                                            <button type="submit" class="btn btn-danger">預約</button>
+                                        </form>
                                     </h3>
                                 <td><div class="post-preview">
                                         <h2 class="post-title">
@@ -74,7 +89,12 @@
                                             價錢:{{$d->price}}
                                             <br><br>
                                             可預約時間:<?php echo $testd; ?>
-                                            <a href="posts"><font face="Arial" color="#cc33ff" size="7">預約~</font></a>
+                                            <form action="/posts" method="POST">
+                                                {{ csrf_field() }}
+                                                <input type = "hidden" id = "delete_id" name = "id" value = "{{$d->id}}">
+
+                                                <button type="submit" class="btn btn-danger">預約</button>
+                                            </form>
                                         </h3>
                                     </div></td>
                             </tr>

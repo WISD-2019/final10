@@ -21,6 +21,7 @@ Route::get('/'          , ['as' => 'index' , 'uses' => 'HomePageController@index
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/posts', 'PostsController@index');
 
 //前台
 Route::get('posts', ['as' => 'posts.index', 'uses' =>
@@ -41,7 +42,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('/posts',['as'=>'admin.posts.store','uses'=> 'AdminPostsController@store']);
     Route::patch('/posts/{id}',['as'=>'admin.posts.update','uses'=>'AdminPostsController@update']);
     Route::delete('/posts/{id}',['as'=>'admin.posts.destroy','uses'=>'AdminPostsController@destroy']);
-    
+
     Route::get('/account'          , ['as' => 'admin.posts.account' , 'uses' => 'AccountController@index']);
     Route::post('/account/create'  , ['as' => 'admin.posts.create' , 'uses' => 'AccountController@create']);
 });
