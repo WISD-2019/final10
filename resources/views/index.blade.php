@@ -21,50 +21,25 @@
         </div>
     </div>
 </header>
-
     <!-- Main Content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
+                <h2 class="post-title">
+                    <font face="Arial"  size="12">房間:{{$a}}</font>
+                </h2>
+                <form action="/about" method="Post">
+                    {{ csrf_field() }}
+                    入住時間：  <input type="datetime-local" name="bdaytime">
+                <p>
 
-                        <h2 class="post-title">
-                            房間1
-                        </h2>
-                        <h3 class="post-subtitle">
-                            雙人房
-                        </h3>
-                    </a>
-                </div>
-                <hr>
-                <div class="post-preview">
-                        <h2 class="post-title">
-                            房間2
-                        </h2>
-                        <h3 class="post-subtitle">
-                            4人房
-                        </h3>
-                </div>
-                <hr>
-                <div class="post-preview">
-                        <h2 class="post-title">
-                            房間3
-                        </h2>
-                        <h3 class="post-subtitle">
-                            6人房
-                        </h3>
-                </div>
-                <hr>
-                <div class="post-preview">
-                        <h2 class="post-title">
-                            房間4
-                        </h2>
-                        <h3 class="post-subtitle">
-                            8人房
-                        </h3>
+                    退訂時間：<input type="datetime-local" name="bdaytime1">
+                <p>
+                    <button type="submit" class="btn btn-danger">確定預約</button>
+                </form>
 
                 </div>
-                <hr>
+
 
             </div>
         </div>

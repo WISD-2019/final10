@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
+use App\Resroom;
 use App\Reservation;
 use Illuminate\Http\Request;
 
@@ -12,9 +14,14 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        $a=$request->input("name");
+        $b=$request->input("bdaytime");
+        $c=$request->input("bdaytime1");
+
+        return view('about',['a'=>$a,'b'=>$b,'c'=>$c]);
     }
 
     /**
@@ -22,9 +29,17 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+        $reservation= new Resroom;
+        $reservation->in_room = $request->input("bdaytime");
+        $reservation->out_room =$request->input("bdaytime1");
+        $reservation->room_id=1;
+        $reservation->reservation_id=1;
+        $reservation->save();
+
+        return view('about');
     }
 
     /**
