@@ -15,12 +15,12 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->dateTime('check_in');
-            $table->dateTime('check_out');
+            $table->dateTime('check_in')->nullable();
+            $table->dateTime('check_out')->nullable();
             $table->text('pay');
             $table->integer('cost');
             $table->integer('money');
-            $table->dateTime('out_time');
+            $table->dateTime('out_time')->nullable();
             $table->integer('customer_id');
             $table->timestamps();
         });
