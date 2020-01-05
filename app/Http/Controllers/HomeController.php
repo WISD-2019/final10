@@ -44,9 +44,13 @@ class HomeController extends Controller
         $get_date4='123';
         foreach($outtime-> resrooms as $resrooms) {
             $get_date4 = $resrooms->out_room . '<br>';
-            $data = ['testa' => $get_date1, 'testb' => $get_date2, 'testc' => $get_date3, 'testd' => $get_date4];
 
         }
+        $drywet=Room::find(1);
+        $drywet2=Room::find(2);
+        $drywet3=Room::find(3);
+        $drywet4=Room::find(4);
+        $data = ['testa' => $get_date1, 'testb' => $get_date2, 'testc' => $get_date3, 'testd' => $get_date4,'a' => $drywet,'b' => $drywet2,'c' => $drywet3,'d' => $drywet4];
         return view('home',$data);
     }
 }

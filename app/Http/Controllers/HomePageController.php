@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use App\Room;
 use Illuminate\Http\Request;
 
@@ -45,12 +46,16 @@ class HomePageController extends Controller
                 $get_date4='123';
                 foreach($outtime-> resrooms as $resrooms) {
                     $get_date4 = $resrooms->out_room . '<br>';
-                    $data = ['testa' => $get_date1, 'testb' => $get_date2, 'testc' => $get_date3, 'testd' => $get_date4];
-
                 }
 //
 //                echo $get_date1;
+        $data = ['testa' => $get_date1, 'testb' => $get_date2, 'testc' => $get_date3, 'testd' => $get_date4];
         return view('welcome',$data);
+
+
+
+
+
     }
 
     /**
