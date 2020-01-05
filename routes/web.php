@@ -43,8 +43,19 @@ Route::group(['prefix' => 'admin'], function() {
     Route::patch('/posts/{id}',['as'=>'admin.posts.update','uses'=>'AdminPostsController@update']);
     Route::delete('/posts/{id}',['as'=>'admin.posts.destroy','uses'=>'AdminPostsController@destroy']);
 
-    Route::get('/account'          , ['as' => 'admin.posts.account' , 'uses' => 'AccountController@index']);
-    Route::post('/account/create'  , ['as' => 'admin.account.create' , 'uses' => 'AccountController@create']);
-    Route::post('/account/update'  , ['as' => 'admin.account.update' , 'uses' => 'AccountController@update']);
-    Route::post('/account/destroy'  , ['as' => 'admin.account.destroy' , 'uses' => 'AccountController@destroy']);
+    Route::get('/account'          , ['as' => 'admin.posts.account' , 'uses' => 'AdminAccountController@index']);
+    Route::post('/account/create'  , ['as' => 'admin.account.create' , 'uses' => 'AdminAccountController@create']);
+    Route::post('/account/update'  , ['as' => 'admin.account.update' , 'uses' => 'AdminAccountController@update']);
+    Route::post('/account/destroy' , ['as' => 'admin.account.destroy' , 'uses' => 'AdminAccountController@destroy']);
+
+    Route::get('/customer'          , ['as' => 'admin.posts.customer' , 'uses' => 'AdminCustomerController@index']);
+    Route::post('/customer/create'  , ['as' => 'admin.customer.create' , 'uses' => 'AdminCustomerController@create']);
+    Route::post('/customer/update'  , ['as' => 'admin.customer.update' , 'uses' => 'AdminCustomerController@update']);
+    Route::post('/customer/destroy' , ['as' => 'admin.customer.destroy' , 'uses' => 'AdminCustomerController@destroy']);
+
+    Route::get('/room'          , ['as' => 'admin.posts.room' , 'uses' => 'AdminRoomController@index']);
+    Route::post('/room/create'  , ['as' => 'admin.room.create' , 'uses' => 'AdminRoomController@create']);
+    Route::post('/room/update'  , ['as' => 'admin.room.update' , 'uses' => 'AdminRoomController@update']);
+    Route::post('/room/destroy' , ['as' => 'admin.room.destroy' , 'uses' => 'AdminRoomController@destroy']);
 });
+
