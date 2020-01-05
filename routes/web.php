@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/posts', 'PostsController@index');
-Route::post('/about', 'ReservationController@create');
+Route::post('/about', 'ReservationController@index');
 //前台
 Route::get('posts', ['as' => 'posts.index', 'uses' =>
     'PostsController@index']);
