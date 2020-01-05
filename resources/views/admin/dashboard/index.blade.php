@@ -24,7 +24,7 @@
     <p>&nbsp;</p>
 
     <div class="col-lg-12">
-        <a href="1" class="btn btn-success">客戶管理</a>
+        <a href="{{ route('admin.posts.customer') }}" class="btn btn-success">客戶管理</a>
     </div>
 
     <p>&nbsp;</p>
@@ -36,7 +36,7 @@
     <p>&nbsp;</p>
     
     <div class="col-lg-12">
-        <a href="1" class="btn btn-success">房間管理</a>
+        <a href="{{ route('admin.posts.room') }}" class="btn btn-success">房間管理</a>
     </div>
 
     
