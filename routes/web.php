@@ -23,7 +23,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/posts', 'PostsController@index');
 Route::post('/about', 'ReservationController@index');
-Route::post('/post','ResroomController@index');
+//Route::post('/post','ResroomController@index');
+Route::get('/contact','ResroomController@index');
+Route::POST('/welcome','CustomerController@index');
 
 //前台
 Route::get('posts', ['as' => 'posts.index', 'uses' =>
@@ -31,8 +33,8 @@ Route::get('posts', ['as' => 'posts.index', 'uses' =>
 Route::get('post', ['as' => 'posts.show', 'uses' => 'ResroomController@index']);
 Route::get('about', ['as' => 'posts.about', 'uses' =>
     'PostsController@about']);
-Route::get('contact', ['as' => 'posts.contact', 'uses' =>
-    'PostsController@contact']);
+//Route::get('contact', ['as' => 'posts.contact', 'uses' =>
+//    'PostsController@contact']);
 
 // 後台
 Route::group(['prefix' => 'admin'], function() {
