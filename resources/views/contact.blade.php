@@ -4,77 +4,81 @@
 @section('title', 'Clean Blog - Contact')
 
 
-<body>
+
 @section('content')
 
-
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/contact-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>Contact Me</h1>
-                        <hr class="small">
-                        <span class="subheading">Have questions? I have answers (maybe).</span>
+                    <div class="site-heading">
+                        <h1>你預約的房間</h1>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div>
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th width="130" style="text-align: center">預約編號</th>
+                            <th width="120" style="text-align: center">房間</th>
+                            <th width="200" style="text-align: center">浴室乾溼分明</th>
+                            <th width="120" style="text-align: center">木質地板</th>
+                            <th width="120" style="text-align: center">陽台</th>
+                            <th width="120" style="text-align: center">房型</th>
+                            <th width="150" style="text-align: center">價錢</th>
+                            <th width="150" style="text-align: center">預約時間</th>
+                            <th width="100" style="text-align: center">備註</th>
+                            <th width="200" style="text-align: center">退訂時間點</th>
+                        </tr>
+                        </thead>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p>
-                <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
-                <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
-                <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-                <form name="sentMessage" id="contactForm" novalidate>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Email Address</label>
-                            <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Phone Number</label>
-                            <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Message</label>
-                            <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <br>
-                    <div id="success"></div>
-                    <div class="row">
-                        <div class="form-group col-xs-12">
-                            <button type="submit" class="btn btn-default">Send</button>
-                        </div>
-                    </div>
-                </form>
+                        @foreach($user_res as $reservation)
+                            <tr>
+                                <td>{{ $reservation ->id}}</td>
+                                <td>{{ $reservation ->resroom->room->id}}</td>
+                                @if($reservation->resroom->room->dry_wet=='Y' || $reservation->resroom->room->dry_wet=='y')
+                                    <td>是 </td>
+                                @else
+                                    <td>否 </td>
+                                @endif
+                                @if($reservation ->resroom->room->wood=='Y' || $reservation ->resroom->room->wood=='y')
+                                    <td>是 </td>
+                                @else
+                                    <td>否 </td>
+                                @endif
+                                @if($reservation ->resroom->room->balcony=='Y' || $reservation ->resroom->room->balcony=='y')
+                                    <td>是 </td>
+                                @else
+                                    <td>否 </td>
+                                @endif
+                                <td>{{ $reservation ->resroom->room->type}}人房</td>
+                                <td>{{ $reservation ->resroom->room->price}}</td>
+                                <td>{{ $reservation ->resroom->in_room}}</td>
+                                <td>
+                                    <form action="/welcome" method="POST">
+                                        {{ csrf_field() }}
+                                        <input type = "hidden" id = "delete_id" name = "delete_id" value = "{{ $reservation ->id}}">
+
+                                        <button type="submit" class="btn btn-danger">取消預約</button>
+                                    </form>
+                                </td>
+                                <td>{{ $reservation ->out_time}}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
+    </article>
 
     <hr>
 @endsection
-</body>
 
-</html>

@@ -20,10 +20,15 @@ class ResroomController extends Controller
     public function index(Request $request)
     {
         //
-        $name=Auth::User()->Customer->name;
-//        dd($name);
-        $a=['a'=>$name];
-        return  view('post',$a);
+        $user_res=Auth::User()->Customer->reservation;
+
+//        foreach(Auth::User()->Customer->reservation as $reservation){
+//            $reservation->id;
+//        }
+
+
+
+        return  view('contact',['user_res'=>$user_res]);
     }
 
     /**

@@ -104,7 +104,7 @@
         </div>
     </div>
     <br></br>
-        <a href="post" ><font  face="Arial" color="#cc33ff" size="7" al>你預約的房間</font></a>
+        <a href="contact" ><font  face="Arial" color="#cc33ff" size="7" al>你預約的房間</font></a>
 
 </div>
 

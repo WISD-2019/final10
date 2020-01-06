@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use auth;
+use App\Reservation;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -12,9 +14,17 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+
+        $res = Reservation::where('id', $request->input("delete_id"))->first();
+        $res->out_time = date ("Y-m-d H:i:s" , mktime(date('H')+8, date('i'), date('s'), date('m'), date('d'), date('Y'))) ;
+        $res->save();
+
+        $user_res=Auth::User()->Customer->reservation;
+
+        return  view('contact',['user_res'=>$user_res]);
     }
 
     /**
