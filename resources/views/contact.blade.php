@@ -61,14 +61,19 @@
                                 <td>{{ $reservation ->resroom->room->type}}人房</td>
                                 <td>{{ $reservation ->resroom->room->price}}</td>
                                 <td>{{ $reservation ->resroom->in_room}}</td>
-                                <td>
+                                @if($reservation ->out_time=='' )
+                                <td>                                
                                     <form action="/welcome" method="POST">
                                         {{ csrf_field() }}
                                         <input type = "hidden" id = "delete_id" name = "delete_id" value = "{{ $reservation ->id}}">
 
                                         <button type="submit" class="btn btn-danger">取消預約</button>
                                     </form>
+                                </td>                                
+                                @else
+                                <td>
                                 </td>
+                                @endif
                                 <td>{{ $reservation ->out_time}}</td>
                             </tr>
                         @endforeach

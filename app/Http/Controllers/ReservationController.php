@@ -32,7 +32,7 @@ class ReservationController extends Controller
         $reservation->pay='n';
         $reservation->cost=$much;
         $reservation->money=$much*0.4;
-        $reservation->customer_id=Auth::user()->id;
+        $reservation->customer_id=Auth::user()->customer->id;
         $reservation->save();
 
         $reseroom= new Resroom;
