@@ -27,7 +27,11 @@
                                 </span>
                         </a>
                     </li>
+                    <li>
+                        <a href="/admin/check">後端管理</a>
+                    </li>
                 </ul>
+                
                 <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
             </div>
         </div>

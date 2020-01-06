@@ -11,7 +11,7 @@
         </h1>
         <ol class="breadcrumb">
             <li class="active">
-                <i class="fa fa-dashboard"></i> 主控台
+                <i class="fa fa-dashboard"></i> 主控台，請先建立4個房間以上
             </li>
         </ol>
     </div>
@@ -37,6 +37,12 @@
     
     <div class="col-lg-12">
         <a href="{{ route('admin.posts.room') }}" class="btn btn-success">房間管理</a>
+    </div>
+
+    <p>&nbsp;</p>
+    
+    <div class="col-lg-12">
+        <a href="/" class="btn btn-success">回 前 端</a>
     </div>
 
     

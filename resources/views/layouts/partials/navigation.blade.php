@@ -13,7 +13,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="{{route('home')}}">回首頁</a>
+                    <a href="/go_home">回首頁</a>
                 </li>
             </ul>
         </div>
