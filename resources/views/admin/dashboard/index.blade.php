@@ -30,7 +30,7 @@
     <p>&nbsp;</p>
     
     <div class="col-lg-12">
-        <a href="1" class="btn btn-success">訂單管理</a>
+        <a href="{{ route('admin.posts.reservation') }}" class="btn btn-success">訂單管理</a>
     </div>
 
     <p>&nbsp;</p>
