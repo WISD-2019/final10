@@ -59,5 +59,13 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('/room/create'  , ['as' => 'admin.room.create' , 'uses' => 'AdminRoomController@create']);
     Route::post('/room/update'  , ['as' => 'admin.room.update' , 'uses' => 'AdminRoomController@update']);
     Route::post('/room/destroy' , ['as' => 'admin.room.destroy' , 'uses' => 'AdminRoomController@destroy']);
+
+    Route::get('/reservation'          , ['as' => 'admin.posts.reservation' , 'uses' => 'AdminReservationController@index']);
+    Route::post('/reservation/create'  , ['as' => 'admin.reservation.create' , 'uses' => 'AdminReservationController@create']);
+    Route::post('/reservation/update'  , ['as' => 'admin.reservation.update' , 'uses' => 'AdminReservationController@update']);
+    Route::post('/reservation/destroy' , ['as' => 'admin.reservation.destroy' , 'uses' => 'AdminReservationController@destroy']);
+    Route::post('/reservation/pay' , ['as' => 'admin.reservation.pay' , 'uses' => 'AdminReservationController@pay']);
+    Route::post('/reservation/check_in' , ['as' => 'admin.reservation.in' , 'uses' => 'AdminReservationController@check_in']);
+    Route::post('/reservation/check_out' , ['as' => 'admin.reservation.out' , 'uses' => 'AdminReservationController@check_out']);
 });
 
