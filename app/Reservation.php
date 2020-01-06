@@ -18,6 +18,6 @@ class Reservation extends Model
     }
     public function resroom()
     {
-        return $this->hasMany(Resroom::class);
+        return $this->hasOne(Resroom::class);
     }
 }
