@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 @extends('layouts.master')
-@section('title', 'Clean Blog - Contact')
+@section('title', '你預約的房間')
 
 
 
@@ -32,7 +32,7 @@
                             <th width="120" style="text-align: center">木質地板</th>
                             <th width="120" style="text-align: center">陽台</th>
                             <th width="120" style="text-align: center">房型</th>
-                            <th width="150" style="text-align: center">價錢</th>
+                            <th width="150" style="text-align: center">總金額</th>
                             <th width="150" style="text-align: center">預約時間</th>
                             <th width="100" style="text-align: center">備註</th>
                             <th width="200" style="text-align: center">退訂時間點</th>
@@ -59,7 +59,7 @@
                                     <td>否 </td>
                                 @endif
                                 <td>{{ $reservation ->resroom->room->type}}人房</td>
-                                <td>{{ $reservation ->resroom->room->price}}</td>
+                                <td>{{ $reservation ->cost}}</td>
                                 <td>{{ $reservation ->resroom->in_room}}</td>
                                 @if($reservation ->out_time=='' )
                                 <td>                                
