@@ -13,91 +13,66 @@
                         </div>
                     @endif
                         <table width="1000" border="1">
-                            <tr bgcolor="#6495ed">
+                        <?php  $i=0;  ?>
+                        @foreach($allroom as $room)
+                            <?php  $i=$i+1; if($i==4){$i=0;} ?>
+                            @if($i%2==1)
+                            
+                                @if($i/2==0.5)
+                                    <tr bgcolor="#6495ed">
+                                @elseif($i/2==1.5)
+                                
+                                    <tr bgcolor="yellow">
+                                @endif
+                            @endif
                                 <td><h2 class="post-title">
-                                        房間:{{$a->id}}
+                                        房間:{{$room->id}}
                                     </h2>
+                                    <br>
                                     <h3 class="post-subtitle">
-                                        房型:{{$a->type}}人房
+                                        房型: {{$room->type}} 人房
                                         <br><br>
-                                    是否乾溼分離:{{$a->dry_wet}}
-                                    木質地板:{{$a->wood}}
-                                    陽台:{{$a->balcony}}
-                                    價錢:{{$a->price}}
+                                    是否乾溼分離:
+                                    @if($room->dry_wet=='Y' || $room->dry_wet=='y')
+                                    是 
+                                    @else
+                                    否 
+                                    @endif
+                                    木質地板:
+                                    @if($room->wood=='Y' || $room->wood=='y')
+                                    是 
+                                    @else
+                                    否 
+                                    @endif
+                                    陽台:
+                                    @if($room->balcony=='Y' || $room->balcony=='y')
+                                    有 
+                                    @else
+                                    沒有 
+                                    @endif        
                                     <br><br>
-                                        可預約時間:<?php echo $testa; ?>
+                                    價錢:{{$room->price}}
+                                    <br><br>
+                                        可預約時間:
+                                        @foreach($room->resrooms as $resroom)
+                                            <?php   $out=date ("Y-m-d H:i:s" , mktime(date('H')+8, date('i'), date('s'), date('m'), date('d'), date('Y'))) ;  $out=$resroom->out_room;   ?>
+                                        @endforeach
+                                        {{$out}}
+                                            <?php   $out=date ("Y-m-d H:i:s" , mktime(date('H')+8, date('i'), date('s'), date('m'), date('d'), date('Y'))) ;   ?>
+
+
                                         <form action="/posts" method="POST">
                                             {{ csrf_field() }}
-                                            <input type = "hidden" id = "delete_id" name = "id" value = "{{$a->id}}">
-
-                                                <button type="submit" class="btn btn-danger">預約</button>
-                                        </form>
-                                </td>
-                                <td><div class="post-preview">
-                                        <h2 class="post-title">
-                                            房間:{{$b->id}}
-                                        </h2>
-                                        <h3 class="post-subtitle">
-                                            房型:{{$b->type}}人房
-                                            <br><br>
-                                            是否乾溼分離:{{$b->dry_wet}}
-                                            木質地板:{{$b->wood}}
-                                            陽台:{{$b->balcony}}
-                                            價錢:{{$b->price}}
-                                            <br><br>
-                                            可預約時間:<?php echo $testb; ?>
-                                            <form action="/posts" method="POST">
-                                                {{ csrf_field() }}
-                                                <input type = "hidden" id = "delete_id" name = "id" value = "{{$b->id}}">
-
-                                                    <button type="submit" class="btn btn-danger">預約</button>
-                                            </form>
-                                        </h3>
-                                    </div></td>
-                            </tr>
-                            <tr bgcolor="yellow">
-                                <td><h2 class="post-title">
-                                        房間:{{$c->id}}
-
-                                    </h2>
-                                    <h3 class="post-subtitle">
-                                        房型:{{$c->type}}人房
-                                        <br><br>
-                                        是否乾溼分離:{{$c->dry_wet}}
-                                        木質地板:{{$c->wood}}
-                                        陽台:{{$c->balcony}}
-                                        價錢:{{$c->price}}
-                                        <br><br>
-                                        可預約時間:<?php echo $testc; ?>
-                                        <form action="/posts" method="POST">
-                                            {{ csrf_field() }}
-                                            <input type = "hidden" id = "delete_id" name = "id" value = "{{$c->id}}">
+                                            <input type = "hidden" id = "delete_id" name = "id" value = "{{$room->id}}">
 
                                             <button type="submit" class="btn btn-danger">預約</button>
                                         </form>
-                                    </h3>
-                                <td><div class="post-preview">
-                                        <h2 class="post-title">
-                                            房間:{{$d->id}}
-                                        </h2>
-                                        <h3 class="post-subtitle">
-                                            房型:{{$d->type}}人房
-                                            <br><br>
-                                            是否乾溼分離:{{$d->dry_wet}}
-                                            木質地板:{{$d->wood}}
-                                            陽台:{{$d->balcony}}
-                                            價錢:{{$d->price}}
-                                            <br><br>
-                                            可預約時間:<?php echo $testd; ?>
-                                            <form action="/posts" method="POST">
-                                                {{ csrf_field() }}
-                                                <input type = "hidden" id = "delete_id" name = "id" value = "{{$d->id}}">
-
-                                                <button type="submit" class="btn btn-danger">預約</button>
-                                            </form>
-                                        </h3>
-                                    </div></td>
-                            </tr>
+                                    </td>
+                                @if($i%2==0)
+                                        </tr>
+                                @endif                                
+                        @endforeach
+                                
                         </table>
                 </div>
             </div>
