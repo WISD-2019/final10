@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 @extends('layouts.master')
-@section('title', 'Clean Blog - About')
+@section('title', '您的預約房間')
 
 
 <body>
