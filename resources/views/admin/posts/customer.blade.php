@@ -90,7 +90,7 @@
                     </tr>
                 </thead>
                 <tbody id="Mytable">
-                @foreach($customer as $customer)
+                @foreach($chgpage as $customer)
                     <tr>
                         <td>{{$customer->id}}</td>
                         <td>{{$customer->user_id}}</td>
@@ -110,6 +110,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {{$chgpage->links()}}
         </div>
     </div>
 </div>

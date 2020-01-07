@@ -16,8 +16,8 @@ class AdminCustomerController extends Controller
      */
     public function index(Request $request)
     {
-        //抓全部資料
-        $customer=Customer::all();
+        //換頁
+        $chgpage=Customer::paginate(5);
         //把最後一筆資料的id抓出來
         $lastid=0;
         $lastuser = Customer::SELECT('id')->orderBy('id', 'desc')->first();
@@ -27,7 +27,7 @@ class AdminCustomerController extends Controller
             $lastid=$lastuser->id;
         }
         
-        $data=['customer'=>$customer , 'lastid'=>$lastid ];
+        $data=['chgpage'=>$chgpage , 'lastid'=>$lastid ];
         return view('admin.posts.customer',$data);
     }
 

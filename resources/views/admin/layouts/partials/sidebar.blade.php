@@ -47,6 +47,9 @@
                 <a href="{{ route('admin.posts.reservation') }}"><i class="fa fa-fw fa-edit"></i> 訂單管理</a>
             </li>
             <li>
+                <a href="{{ route('admin.posts.room') }}"><i class="fa fa-fw fa-edit"></i> 房間管理</a>
+            </li>
+            <li>
                 <a href="/"><i class="fa fa-fw fa-edit"></i> 回前端</a>
             </li>
         </ul>

@@ -106,7 +106,7 @@
                     </tr>
                 </thead>
                 <tbody id="Mytable">
-                @foreach($room as $room)
+                @foreach($chgpage as $room)
                     <tr>
                         <td>{{$room->id}}</td>
                         @if($room->dry_wet=='Y' || $room->dry_wet=='y')
@@ -139,9 +139,13 @@
                 @endforeach
                 </tbody>
             </table>
+            {{$chgpage->links()}}
         </div>
+        
     </div>
+    
 </div>
+
 
 
 <!--'修改'彈出視窗的內容 Modal -->

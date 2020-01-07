@@ -16,8 +16,8 @@ class AdminAccountController extends Controller
      */
     public function index(Request $request)
     {
-        //抓全部資料
-        $user=User::all();
+        //換頁
+        $chgpage=User::paginate(5);
         //把最後一筆資料的id抓出來
         $lastid=0;
         $lastuser = User::SELECT('id')->orderBy('id', 'desc')->first();
@@ -27,7 +27,7 @@ class AdminAccountController extends Controller
             $lastid=$lastuser->id;
         }
         
-        $data=['user'=>$user , 'lastid'=>$lastid ];
+        $data=['chgpage'=>$chgpage , 'lastid'=>$lastid ];
         return view('admin.posts.account',$data);
     }
 

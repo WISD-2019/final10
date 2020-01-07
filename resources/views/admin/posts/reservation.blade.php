@@ -105,7 +105,7 @@
                     </tr>
                 </thead>
                 <tbody id="Mytable">
-                @foreach($reservation as $reservation)
+                @foreach($chgpage as $reservation)
                     <tr>
                         <td>{{$reservation->id}}</td>
                         <td>{{$reservation->customer->name}}</td>
@@ -177,6 +177,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {{$chgpage->links()}}
         </div>
     </div>
 </div>

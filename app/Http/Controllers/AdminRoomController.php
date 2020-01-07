@@ -17,8 +17,9 @@ class AdminRoomController extends Controller
      */
     public function index(Request $request)
     {
-         //抓全部資料
-         $room=Room::all();
+         
+         //換頁
+         $chgpage=Room::paginate(5);
          //把最後一筆資料的id抓出來
          $lastid=0;
          $lastroom = Room::SELECT('id')->orderBy('id', 'desc')->first();
@@ -28,7 +29,7 @@ class AdminRoomController extends Controller
              $lastid=$lastroom->id;
          }
          
-         $data=['room'=>$room , 'lastid'=>$lastid ];
+         $data=[ 'lastid'=>$lastid , 'chgpage'=>$chgpage ];
          return view('admin.posts.room',$data);
     }
 

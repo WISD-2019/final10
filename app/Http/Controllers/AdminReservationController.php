@@ -19,8 +19,9 @@ class AdminReservationController extends Controller
      */
     public function index(Request $request)
     {
-         //抓全部資料
-         $reservation=Reservation::all();
+         
+         //換頁
+         $chgpage=Reservation::paginate(5);
         //  Reservation::all();
          //抓房間資料
          $room = Room::SELECT('id')->get();
@@ -33,7 +34,7 @@ class AdminReservationController extends Controller
              $lastid=$lastres->id;
          }
          
-         $data=['reservation'=>$reservation , 'lastid'=>$lastid , 'room'=>$room ];
+         $data=['chgpage'=>$chgpage , 'lastid'=>$lastid , 'room'=>$room ];
          return view('admin.posts.reservation',$data);
     }
 
