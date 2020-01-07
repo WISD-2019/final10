@@ -5,7 +5,7 @@
 - 選取房型
 <p align="center"><img src=https://i.imgur.com/1kXA5LG.png ></p>
 
-- 選擇預約和退房日期
+- 選擇退房日期
 <p align="center"><img src=https://i.imgur.com/ZKZqsNU.png ></p>
 
 # 單筆預約明細
