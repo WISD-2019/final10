@@ -20,6 +20,7 @@
 前端
 
 - 預約房間    [3A632095 朱泰宇](https://github.com/3A632095)[3A632096 蔡侑秦](https://github.com/3A632096)
+    訂位日期、房間房型
 - 查詢預約的房間  [3A632095 朱泰宇](https://github.com/3A632095)[3A632096 蔡侑秦](https://github.com/3A632096)
 - 取消預約  [3A632095 朱泰宇](https://github.com/3A632095)[3A632096 蔡侑秦](https://github.com/3A632096)
 
@@ -38,17 +39,26 @@
 
 ## 額外使用的套件或樣板
 
-前台樣板
-- [Clean Blog](https://startbootstrap.com/template-overviews/clean-blog/)
+前台樣板- [Clean Blog](https://startbootstrap.com/template-overviews/clean-blog/)
 
 -畫面供使用者使用，且使用起來方便且舒適。
 
-後台樣板-0901樣板
+後台樣板  0901樣板
 
 -簡易操作的畫面，供管理者使用。
 
-## Security Vulnerabilities
+## 系統使用者測試帳號
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+前台-使用者
+
+-帳號:11@gmail.com
+-密碼:123456789
+
+後台-管理者
+
+-帳號:33@gmail.com
+-密碼:987654321
 
 ## 系統開發人員與工作分配
+[3A632095 朱泰宇](https://github.com/3A632095)  (前端)
+[3A632096 蔡侑秦](https://github.com/3A632096)  (後端+修改前端)
