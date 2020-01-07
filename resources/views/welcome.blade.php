@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <h3 class="post-title">線上預約訂房</h3>
+                    <h3 class="post-title">侑宇民宿</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
@@ -116,7 +116,7 @@
                                         <td><h3 class="post-subtitle">有 </h3></td>
                                         @else
                                         <td><h3 class="post-subtitle">沒有 </h3></td>
-                                        @endif                        
+                                        @endif
                                         <td><h3 class="post-subtitle">{{($room->type)}}人房</td>
                                         <td><h3 class="post-subtitle">{{($room->price)}}</h3></td>
                                         <td>
@@ -126,17 +126,17 @@
                                             <?php   $out=$resroom->out_room;   ?>
                                         @endforeach
                                         {{$out}}
-                                            
+
                                             </h3>
                                         </td>
                                     </tr>
-                                
+
                                 @endforeach
                                 <hr>
                                 </tbody>
-                            </table>            
-                        </div>        
-                    </div>    
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

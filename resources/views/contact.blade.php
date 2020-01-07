@@ -7,12 +7,12 @@
 
 @section('content')
 
-    <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/hotel.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>你預約的房間</h1>
+                        <h1>您預約的房間</h1>
                     </div>
                 </div>
             </div>
@@ -62,14 +62,14 @@
                                 <td>{{ $reservation ->cost}}</td>
                                 <td>{{ $reservation ->resroom->in_room}}</td>
                                 @if($reservation ->out_time=='' )
-                                <td>                                
+                                <td>
                                     <form action="/welcome" method="POST">
                                         {{ csrf_field() }}
                                         <input type = "hidden" id = "delete_id" name = "delete_id" value = "{{ $reservation ->id}}">
 
                                         <button type="submit" class="btn btn-danger">取消預約</button>
                                     </form>
-                                </td>                                
+                                </td>
                                 @else
                                 <td>
                                 </td>

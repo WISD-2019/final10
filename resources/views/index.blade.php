@@ -15,7 +15,7 @@
                 <div class="site-heading">
                     <h1>線上訂房</h1>
                     <hr class="small">
-                    <span class="subheading">XXX民宿</span>
+                    <span class="subheading">侑宇民宿</span>
                 </div>
             </div>
         </div>

@@ -17,11 +17,11 @@
                         @foreach($allroom as $room)
                             <?php  $i=$i+1; if($i==4){$i=0;} ?>
                             @if($i%2==1)
-                            
+
                                 @if($i/2==0.5)
                                     <tr bgcolor="#6495ed">
                                 @elseif($i/2==1.5)
-                                
+
                                     <tr bgcolor="yellow">
                                 @endif
                             @endif
@@ -34,22 +34,22 @@
                                         <br><br>
                                     是否乾溼分離:
                                     @if($room->dry_wet=='Y' || $room->dry_wet=='y')
-                                    是 
+                                    是
                                     @else
-                                    否 
+                                    否
                                     @endif
                                     木質地板:
                                     @if($room->wood=='Y' || $room->wood=='y')
-                                    是 
+                                    是
                                     @else
-                                    否 
+                                    否
                                     @endif
                                     陽台:
                                     @if($room->balcony=='Y' || $room->balcony=='y')
-                                    有 
+                                    有
                                     @else
-                                    沒有 
-                                    @endif        
+                                    沒有
+                                    @endif
                                     <br><br>
                                     價錢:{{$room->price}}
                                     <br><br>
@@ -59,7 +59,7 @@
                                             <?php   $out=$resroom->out_room;   ?>
                                         @endforeach
                                         {{$out}}
-                                            
+
 
 
                                         <form action="/posts" method="POST">
@@ -71,16 +71,16 @@
                                     </td>
                                 @if($i%2==0)
                                         </tr>
-                                @endif                                
+                                @endif
                         @endforeach
-                                
+
                         </table>
                 </div>
             </div>
         </div>
     </div>
     <br></br>
-        <a href="contact" ><font  face="Arial" color="#cc33ff" size="7" al>你預約的房間</font></a>
+        <a href="contact" ><font  face="Arial" color="#cc33ff" size="7" al>您預約的房間</font></a>
 
 </div>
 
