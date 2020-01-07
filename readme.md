@@ -35,7 +35,7 @@
 - 訪客首頁(Route::get('/')) [3A632095 朱泰宇](https://github.com/3A632095)[3A632096 蔡侑秦](https://github.com/3A632096)
 
 前端
-- 判斷客戶或管理者(Route::get('/go_home'))[3A632096 蔡侑秦](https://github.com/3A632096)
+- 判斷是客戶還是管理者(Route::get('/home'))[3A632096 蔡侑秦](https://github.com/3A632096)
 - 預約房間(Route::get('/go_home'))[3A632095 朱泰宇](https://github.com/3A632095)[3A632096 蔡侑秦](https://github.com/3A632096)
   - 訂房日期((Route::post('/posts'))[3A632095 朱泰宇](https://github.com/3A632095)
 - 查詢預約的房間((Route::get('/contact))[3A632095 朱泰宇](https://github.com/3A632095)[3A632096 蔡侑秦](https://github.com/3A632096)
