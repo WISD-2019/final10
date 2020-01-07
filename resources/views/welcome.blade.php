@@ -81,74 +81,61 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    線上預約訂房
+                    <h3 class="post-title">線上預約訂房</h3>
                 </div>
-
-                <div class="links">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                                <div class="post-preview">
-
-                                    <h2 class="post-title">
-                                        房間1
-                                    </h2>
-                                    <h3 class="post-subtitle">
-                                        2人房
-                                        <br><br>
-                                        可預約時間:<?php echo $testa; ?>
-                                    </h3>
-
-                                </div>
-
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="120" style="text-align: center">房間編號</th>
+                                        <th width="120" style="text-align: center">浴室乾溼分明</th>
+                                        <th width="120" style="text-align: center">木質地板</th>
+                                        <th width="120" style="text-align: center">陽台</th>
+                                        <th width="120" style="text-align: center">房型</th>
+                                        <th width="150" style="text-align: center">價錢</th>
+                                        <th width="250" style="text-align: center">可預約時間</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="Mytable">
+                                @foreach($allroom as $room)
+                                    <tr>
+                                        <td><h3 class="post-subtitle">{{$room->id}} </h3></td>
+                                        @if($room->dry_wet=='Y' || $room->dry_wet=='y')
+                                        <td><h3 class="post-subtitle">是 </h3></td>
+                                        @else
+                                        <td><h3 class="post-subtitle">否 </h3></td>
+                                        @endif
+                                        @if($room->wood=='Y' || $room->wood=='y')
+                                        <td><h3 class="post-subtitle">是 </h3></td>
+                                        @else
+                                        <td><h3 class="post-subtitle">否 </h3></td>
+                                        @endif
+                                        @if($room->balcony=='Y' || $room->balcony=='y')
+                                        <td><h3 class="post-subtitle">有 </h3></td>
+                                        @else
+                                        <td><h3 class="post-subtitle">沒有 </h3></td>
+                                        @endif                        
+                                        <td><h3 class="post-subtitle">{{($room->type)}}人房</td>
+                                        <td><h3 class="post-subtitle">{{($room->price)}}</h3></td>
+                                        <td>
+                                            <h3 class="post-subtitle">
+                                        @foreach($room->resrooms as $resroom)
+                                            <?php   $out=date ("Y-m-d H:i:s" , mktime(date('H')+8, date('i'), date('s'), date('m'), date('d'), date('Y'))) ;  $out=$resroom->out_room;   ?>
+                                        @endforeach
+                                        {{$out}}
+                                            <?php   $out=date ("Y-m-d H:i:s" , mktime(date('H')+8, date('i'), date('s'), date('m'), date('d'), date('Y'))) ;   ?>
+                                            </h3>
+                                        </td>
+                                    </tr>
+                                
+                                @endforeach
                                 <hr>
-
-                                <div class="post-preview">
-                                    <h2 class="post-title">
-                                        房間2
-
-                                    </h2>
-                                    <h3 class="post-subtitle">
-                                        4人房
-                                        <br><br>
-                                        可預約時間:<?php echo $testb; ?>
-                                    </h3>
-                                </div>
-
-                                <hr>
-
-                                <div class="post-preview">
-                                    <h2 class="post-title">
-                                        房間3
-
-                                    </h2>
-                                    <h3 class="post-subtitle">
-                                        6人房
-                                        <br><br>
-                                        可預約時間:<?php echo $testc; ?>
-                                    </h3>
-                                </div>
-
-                                <hr>
-
-                                <div class="post-preview">
-                                    <h2 class="post-title">
-                                        房間4
-
-
-                                    </h2>
-                                    <h3 class="post-subtitle">
-                                        8人房
-                                        <br><br>
-                                        可預約時間:<?php echo $testd; ?>
-                                    </h3>
-
-                                </div>
-                                <hr>
-
-                            </div>
-                        </div>
-                    </div>
+                                </tbody>
+                            </table>            
+                        </div>        
+                    </div>    
                 </div>
             </div>
         </div>
