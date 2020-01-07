@@ -121,11 +121,12 @@
                                         <td><h3 class="post-subtitle">{{($room->price)}}</h3></td>
                                         <td>
                                             <h3 class="post-subtitle">
+                                            <?php   $out=date ("Y-m-d H:i:s" , mktime(date('H')+8, date('i'), date('s'), date('m'), date('d'), date('Y'))) ;?>
                                         @foreach($room->resrooms as $resroom)
-                                            <?php   $out=date ("Y-m-d H:i:s" , mktime(date('H')+8, date('i'), date('s'), date('m'), date('d'), date('Y'))) ;  $out=$resroom->out_room;   ?>
+                                            <?php   $out=$resroom->out_room;   ?>
                                         @endforeach
                                         {{$out}}
-                                            <?php   $out=date ("Y-m-d H:i:s" , mktime(date('H')+8, date('i'), date('s'), date('m'), date('d'), date('Y'))) ;   ?>
+                                            
                                             </h3>
                                         </td>
                                     </tr>

@@ -54,11 +54,12 @@
                                     價錢:{{$room->price}}
                                     <br><br>
                                         可預約時間:
+                                            <?php   $out=date ("Y-m-d H:i:s" , mktime(date('H')+8, date('i'), date('s'), date('m'), date('d'), date('Y'))) ;?>
                                         @foreach($room->resrooms as $resroom)
-                                            <?php   $out=date ("Y-m-d H:i:s" , mktime(date('H')+8, date('i'), date('s'), date('m'), date('d'), date('Y'))) ;  $out=$resroom->out_room;   ?>
+                                            <?php   $out=$resroom->out_room;   ?>
                                         @endforeach
                                         {{$out}}
-                                            <?php   $out=date ("Y-m-d H:i:s" , mktime(date('H')+8, date('i'), date('s'), date('m'), date('d'), date('Y'))) ;   ?>
+                                            
 
 
                                         <form action="/posts" method="POST">

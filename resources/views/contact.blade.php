@@ -29,7 +29,7 @@
                             <th width="130" style="text-align: center">預約編號</th>
                             <th width="120" style="text-align: center">房間</th>
                             <th width="200" style="text-align: center">浴室乾溼分明</th>
-                            <th width="120" style="text-align: center">木質地板</th>
+                            <th width="150" style="text-align: center">木質地板</th>
                             <th width="120" style="text-align: center">陽台</th>
                             <th width="120" style="text-align: center">房型</th>
                             <th width="150" style="text-align: center">總金額</th>
