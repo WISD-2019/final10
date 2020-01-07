@@ -19,30 +19,10 @@ class AdminDashboardController extends Controller
             return view('admin.dashboard.index');
         }
         
-        $outtime=Room::find(1);
-        $get_date1='123';
-        foreach($outtime-> resrooms as $resrooms) {
-            $get_date1= $resrooms->out_room . '<br>';
-
-        }
-        $outtime=Room::find(2);
-        $get_date2='123';
-        foreach($outtime-> resrooms as $resrooms) {
-            $get_date2 = $resrooms->out_room . '<br>';
-        }
-            $outtime=Room::find(3);
-            $get_date3='123';
-            foreach($outtime-> resrooms as $resrooms) {
-                $get_date3 = $resrooms->out_room . '<br>';
-            }
-                $outtime=Room::find(4);
-                $get_date4='123';
-                foreach($outtime-> resrooms as $resrooms) {
-                    $get_date4 = $resrooms->out_room . '<br>';
-                }
+        $allroom=Room::all();
 //
 //                echo $get_date1;
-        $data = ['testa' => $get_date1, 'testb' => $get_date2, 'testc' => $get_date3, 'testd' => $get_date4];
+        $data = ['allroom'=>$allroom];
         return view('welcome',$data);
     }
 }
