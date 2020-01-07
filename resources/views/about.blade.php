@@ -34,7 +34,7 @@
                     是否乾溼分離:{{$room->dry_wet}}<p>
                     預定入住時間:{{$a}}<p>
                     預定退房時間:{{$b}}<p>
-                    <form action="/home" method="GET">
+                    <form action="/go_home" method="GET">
                         {{ csrf_field() }}
                     <button type="submit" class="btn btn-danger">確定並回到首頁</button>
                     </form>
