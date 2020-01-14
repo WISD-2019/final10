@@ -85,15 +85,15 @@
 
 ## 系統復原步驟
 
-複製https://github.com/WISD-2019/final10.git本系統在GitHub的專案，打開 Source tree，點選 Clone 後，輸入以下資料
+複製https://github.com/WISD-2019/final10.git 本系統在GitHub的專案，打開 Source tree，點選 Clone 後，輸入以下資料
 
 Source Path:https://github.com/WISD-2019/final10.git Destination Path:C:\wagon\uwamp\www\final10 打開cmder，切換至專案所在資料夾，cd final10
 
 在cmder輸入以下命令，以復原此系統：
 
-composer install
-composer run‐script post‐root‐package‐install
-composer run‐script post‐create‐project‐cmd
+- composer install
+- composer run‐script post‐root‐package‐install
+- composer run‐script post‐create‐project‐cmd
 
 將專案打開 在.env檔案內輸入資料庫主機IP、Port、名稱、與帳密如下：
 
