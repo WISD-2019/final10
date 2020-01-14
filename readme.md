@@ -83,6 +83,48 @@
 
 - uwamp->www->final10->public->final10.sql
 
+## 系統復原步驟
+
+複製https://github.com/WISD-2019/final10.git本系統在GitHub的專案，打開 Source tree，點選 Clone 後，輸入以下資料
+
+Source Path:https://github.com/WISD-2019/final10.git Destination Path:C:\wagon\uwamp\www\final10 打開cmder，切換至專案所在資料夾，cd final10
+
+在cmder輸入以下命令，以復原此系統：
+
+composer install
+composer run‐script post‐root‐package‐install
+composer run‐script post‐create‐project‐cmd
+
+將專案打開 在.env檔案內輸入資料庫主機IP、Port、名稱、與帳密如下：
+
+。DB_HOST=127.0.0.1
+
+。DB_PORT=33060
+
+。DB_DATABASE=final10
+
+。DB_USERNAME=root
+
+。DB_PASSWORD=root
+
+開啟UwAmp，點選PHPMyAdmin，輸入以下資料後並點擊登入，進入MySQL後，建立新資料庫，名稱為final10
+
+。資料庫系統:MYSQL
+
+。伺服器:localhost:33060
+
+。帳號:root
+
+。密碼:root
+
+在cmder輸入以下命令，將所有資料表產生至final10資料庫內
+
+php artisan migrate 
+
+在資料庫頁面(PHPMyAdmin)裡，將final10.sql(C:\wagon\uwamp\www\final10\public\final10.sql)匯入
+
+在UwAmp下，點選Apache config，選擇port 8000 ，並在Document Root 輸入{DOCUMENTPATH}/final10/public
+
 ## 系統使用者測試帳號
 
 前台-使用者
